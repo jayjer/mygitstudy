@@ -4,9 +4,9 @@ git add [filename]
 git status
 # 查看git的提交的相关的日志
 git log --pretty =oneline
-# 删除对应的文件
+# 删除对应的文件（这样执行直接回在暂存区添加修改）
 git rm  [filename]
-# 重命名对应的文件
+# 重命名对应的文件（这样执行直接回在暂存区添加修改）
 git mv  [filename] [filename]
 # 将提交的暂存区域的文件 换还原为未暂存
 git reset HEAD [filename]
