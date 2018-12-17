@@ -8,7 +8,7 @@ git log --pretty =oneline
 git rm  [filename]
 # 重命名对应的文件
 git mv  [filename] [filename]
-# 讲提交的暂存区域的文件 换还原为未暂存
+# 将提交的暂存区域的文件 换还原为未暂存
 git reset HEAD [filename]
 # 将对应的提交提交在本地库中 
 git commit 
@@ -19,4 +19,5 @@ git commit -a -m "comments"
 git commit --amend
 # 将本地提交提交到远程库中
 git push -u origin master
-#
+#这边是将修改的文件（还没进入暂存区域的文件）放弃所有的修改的（慎用）
+git checkout -- [filename]
