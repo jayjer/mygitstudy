@@ -1,0 +1,16 @@
+﻿# 加入暂存区
+git add [filename]
+# 查看当前的git的状态
+git status
+# 查看git的提交的相关的日志
+git log --pretty =oneline
+# 删除对应的文件
+git rm  [filename]
+# 重命名对应的文件
+git mv  [filename] [filename]
+# 讲提交的暂存区域的文件 换还原为未暂存
+git reset HEAD [filename]
+# 将对应的提交提交在本地库中
+git commit -a -m "comments"
+# 将本地提交提交到远程库中
+git push -u origin master
