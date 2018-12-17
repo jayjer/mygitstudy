@@ -1,4 +1,6 @@
-﻿# 加入暂存区
+﻿# 克隆
+git clone [url]
+# 加入暂存区
 git add [filename]
 # 查看当前的git的状态
 git status
@@ -19,5 +21,5 @@ git commit -a -m "comments"
 git commit --amend
 # 将本地提交提交到远程库中
 git push -u origin master
-#这边是将修改的文件（还没进入暂存区域的文件）放弃所有的修改的（慎用）
+#这边是将修改的文件（还没进入暂存区域的文件即无状态的时候）放弃所有的修改的（慎用）
 git checkout -- [filename]
