@@ -10,7 +10,13 @@ git rm  [filename]
 git mv  [filename] [filename]
 # 讲提交的暂存区域的文件 换还原为未暂存
 git reset HEAD [filename]
-# 将对应的提交提交在本地库中
+# 将对应的提交提交在本地库中 
+git commit 
+git commit -m "注释内容"
+如果是非新加的文件（就是受到git控制的文件）这边直接加上-a 就可以直接省略 git add
 git commit -a -m "comments"
+可以实现这次提的注释修改为上次提交的提交的注释
+git commit --amend
 # 将本地提交提交到远程库中
 git push -u origin master
+#
