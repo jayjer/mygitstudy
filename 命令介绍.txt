@@ -26,7 +26,7 @@ git log --pretty =oneline
 git rm  [filename]
 # 重命名对应的文件（这样执行直接回在暂存区添加修改）
 git mv  [filename] [filename]
-# 将提交的暂存区域的文件 换还原为未暂存
+# 将提交的暂存区域的文件 还原为未暂存
 git reset HEAD [filename]
 # 将对应的提交提交在本地库中 
 git commit 
@@ -39,3 +39,16 @@ git commit --amend
 git push -u origin master
 #这边是将修改的文件（还没进入暂存区域的文件即无状态的时候）放弃所有的修改的（慎用）
 git checkout -- [filename]
+====================================================================================
+git diff 文件对比
+#工作区与暂存区比较
+git diff  [filename]
+#工作区与HEAD ( 当前工作分支) 比较
+git diff HEAD [filename]
+#暂存区与HEAD比较
+git diff --staged 或 --cached  [filename]
+#当前分支的文件与branchName 分支的文件进行比较
+git diff branchName [filename]
+#与某一次提交进行比较
+git diff commitId [filename]
+====================================================================================
