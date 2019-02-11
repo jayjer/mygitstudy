@@ -28,6 +28,8 @@ git rm  [filename]
 git mv  [filename] [filename]
 # 将提交的暂存区域的文件 还原为未暂存
 git reset HEAD [filename]
+#这边是将修改的文件（还没进入暂存区域的文件即无状态的时候）放弃所有的修改的（慎用）
+git checkout -- [filename]
 # 将对应的提交提交在本地库中 
 git commit 
 git commit -m "注释内容"
@@ -37,8 +39,6 @@ git commit -a -m "comments"
 git commit --amend
 # 将本地提交提交到远程库中
 git push -u origin master
-#这边是将修改的文件（还没进入暂存区域的文件即无状态的时候）放弃所有的修改的（慎用）
-git checkout -- [filename]
 ====================================================================================
 git diff 文件对比
 #工作区与暂存区比较
