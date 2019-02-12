@@ -14,7 +14,8 @@ git pull [前面添加的远程仓库名字] [对应的仓库的分支名]
 git branch
 # 查看远程仓库的分支 
 git branch -r
-
+# 拉取当前远程分支的数据
+git fetch [remote-name]
 ==========================
 # 加入暂存区
 git add [filename]
