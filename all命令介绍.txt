@@ -23,6 +23,7 @@ git remote rm [remote-name]
 # 拉取当前远程分支的数据
 git fetch [remote-name]
 ==========================
+@@基本的提交等操作
 # 加入暂存区
 git add [filename]
 # 查看当前的git的状态
@@ -85,4 +86,29 @@ git log
 10.按标签tag  git log v1.0 直接这样是查询标签之前的commit
 11.按commit  git log commit ：查询commit之前的记录，包含commit git log commit1 commit2：查询commit1与commit2之间的记录，包括commit1和commit2
 git log commit1..commit2：同上，但是不包括commit1 其中，commit可以是提交哈希值的简写模式，也可以使用HEAD代替  HEAD 表示最后一次提交
+====================================================================================
+#git 打标签相关的操作
+#列出标签
+git tag
+#筛选列出标签
+git tag -l 'v1.8.5
+#新建标签
+git tag [tagname]  用于新建一个标签，默认为HEAD，也可以指定一个commit id
+#查看标签信息
+git show [tagname]
+#在提交版本时候可以直接指定标签
+git tag -a [tagname] -m "提交的注释"
+共享标签
+#将本地标签推送当远程共享对应的标签
+git push origin [tagname]
+#一次性推送很多标签
+git push origin --tags
+#删除本地仓库的tag
+git tag -d [tagname]
+#删除远程仓库的tag
+git push origin :refs/tags/[del-tagname] 通过先删除对应的本地仓库的tag 然后在使用这条命令 将对应的更新推送给远程
+====================================================================================
+别名定义
+# 如果不想每次都输入完整的 Git 命令，可以通过 git config 文件来轻松地为每一个命令设置一个别名
+git config --global alias.unstage 'reset HEAD --'
 
