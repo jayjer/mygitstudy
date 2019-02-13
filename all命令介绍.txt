@@ -10,10 +10,16 @@ git remote add [仓库名] [仓库的url]
 git remote -v
 # 拉取远程仓库相关的最新文件
 git pull [前面添加的远程仓库名字] [对应的仓库的分支名]
-# 查看相关的分支
+# 查看本地相关的分支
 git branch
 # 查看远程仓库的分支 
 git branch -r
+#查看远程仓库的更多信息
+git remote show [remote-name]
+#远程仓库的重命名
+git remote rename [old-name] [new-name]
+#远程仓库的删除
+git remote rm [remote-name]
 # 拉取当前远程分支的数据
 git fetch [remote-name]
 ==========================
