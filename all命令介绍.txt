@@ -110,5 +110,11 @@ git push origin :refs/tags/[del-tagname] 通过先删除对应的本地仓库的
 ====================================================================================
 别名定义
 # 如果不想每次都输入完整的 Git 命令，可以通过 git config 文件来轻松地为每一个命令设置一个别名
-git config --global alias.unstage 'reset HEAD --'
+#git config --global alias.unstage 'reset HEAD --'  后面可以通过 git unstage [filename] 来实现对应的将暂存变为为暂存
+git config --global alias.last 'log -1 HEAD' 查看最后一次提交
+====================================================================================
+Git 分支操作
 
+
+
+ 
