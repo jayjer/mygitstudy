@@ -116,14 +116,22 @@ git config --global alias.last 'log -1 HEAD' 查看最后一次提交
 Git 分支操作
 git 分支简略介绍
 git在提交的时候，提交的节点包含3个对象，文件快照对象，树结构对象，提交信息对象。
+# 查看本地相关的分支
+git branch
 #创建新的分支
 git branch [branch-name]
+#删除本地分支
+git branch -d [branch-name] 这边是删除的时候如果有变更没有合并的时候，会报错 is not fully merged 可以使用强制删除git branch -D [branch-name] 
 #你可以简单地使用 git log 命令查看各个分支当前所指的对象。 提供这一功能的参数是 --decorate。
 git --oneline --decorate
+#切换分支使用
+git checkout [branch-name]
+@@当第一次创建分支的时候，此时当前分支中有文件修改(当未被跟踪或者暂存)，这时候如果直接执行checkout 切换分支，对应的修改也会到且切换的分支。
 @@这边有个注意事项是在操作本地分支的时候,（新建文件）当未被跟踪的文件或者暂存文件，会随着分支的切换，跟随进入对应的分支。
 如果这时候使用 git commit -a -m "" 操作的时候会直接在该分支下提交，所以要注意这样的情况。在切换分支时候保持，
 当前分支下status 是干净的时候在进行相关的切换操作。
 如果是修改文件，git会强制要求你在切换分支的时候进行当前修改的提交，否则是无法进行分支切换的。
+
 
 
 
