@@ -47,6 +47,8 @@ git commit -a -m "comments"
 git commit --amend
 # 将本地提交提交到远程库中
 git push -u origin master
+#回滚到指定分支
+git reset --hard [版本hash-code]
 ====================================================================================
 git diff 文件对比
 #工作区与暂存区比较
