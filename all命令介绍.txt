@@ -38,6 +38,8 @@ git mv  [filename] [filename]
 git reset HEAD [filename]
 #这边是将修改的文件（还没进入暂存区域的文件即无状态的时候）放弃所有的修改的（慎用）
 git checkout -- [filename]
+#撤销所有本地更改（未被跟踪的文件） 慎用
+git checkout .
 # 将对应的提交提交在本地库中 
 git commit 
 git commit -m "注释内容"
