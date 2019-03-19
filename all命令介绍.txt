@@ -168,6 +168,12 @@ Git 将此次三方合并的结果做了一个新的快照并且自动创建一�
 #更新你的远程仓库引用
 git fetch [remote-name]
 
+#回滚到指定分支（这边使用的是hard模式 会覆盖本地的修改）
+git reset --hard [版本hash-code]
+
+@@创建远程分支的时候，
+如果使用的是 git remote add [远程仓库别名] [远程仓库的地址] 这是看只是建立了远程分支别名，本地还未有remotes/[远程仓库别名]/master 对应的分支。
+在使用 git pull [远程仓库别名] 或者使用的 git fetch [远程仓库别名] 的时候才会建立对应的remotes/[远程仓库别名]/master 对应的分支
 
 
 
