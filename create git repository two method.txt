@@ -41,6 +41,10 @@ git fetch [remote-name]
 
 3#创建分支并且跟踪对应的远程分支，–track标识新创建的本地分支跟踪该远程分支
 git checkout --track [remote-name]/[branch-name] -b [local-branch-name]
+这边如果创建的分支名 默认和远程分支保持一样的时候（简写）
+git checkout --track [remote-name]/[branch-name]
+这边如果创建的分支名想使用别名和远程分支不同的时候
+git checkout -b [as-name] [remote-name]/[branch-name]
 
 进行上面的操作后就可以进行对该远程仓库进行相关的文件提交操作了
 
