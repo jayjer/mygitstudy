@@ -184,6 +184,9 @@ git branch --set-upstream-to=[remote-name]/[branch-name]
 #在创建分支的时候同时设定跟踪分支
 git checkout --track [remote-name]/[branch-name] -b [local-branch-name]
 
+#删除远程分支
+git push [remote-name] --delete [branch-name]
+
 
 
 
