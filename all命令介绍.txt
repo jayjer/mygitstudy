@@ -107,8 +107,11 @@ git tag -a [tagname] -m "提交的注释"
 git push origin [tagname]
 #一次性推送很多标签
 git push origin --tags
-#强制推送本地分支覆盖远程分支（慎用）
-git push --force origin 
+#强制推送本地分支覆盖远程分支（慎用）(一般是远程库只有一个人使用的时候使用)
+git push --force origin [branch-name]
+与上面的区别是使用该命令在强制覆盖前会进行一次检查如果其他人在该分支上有提交会有一个警告，此时可以避免覆盖代码的风险。
+git push --force-with-lease origin [branch-name]
+
 #删除本地仓库的tag
 git tag -d [tagname]
 #删除远程仓库的tag
@@ -233,6 +236,16 @@ git  checkout [rebase-onto-branch-name]
 git reset --hard  [commit-hash-code]
 
 5# 此时你使用 git log 查看分支会发现对应commit区间已经复制到了指定的分支上了
+
+@@注当进行rebase后 如果本地分支无法正常push本地代码到远程，使用下面的方法是远程库 和本地保持一致
+#强制推送本地分支覆盖远程分支（慎用）(一般是远程库只有一个人使用的时候使用)
+git push --force origin [branch-name]
+与上面的区别是使用该命令在强制覆盖前会进行一次检查如果其他人在该分支上有提交会有一个警告，此时可以避免覆盖代码的风险。
+git push --force-with-lease origin [branch-name]
+
+
+@@ 如果只是复制某一两个提交到其他分支，建议使用更简单的命令:git cherry-pick
+
 
 
 
