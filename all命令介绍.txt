@@ -244,7 +244,11 @@ git push --force origin [branch-name]
 git push --force-with-lease origin [branch-name]
 
 
-@@ 如果只是复制某一两个提交到其他分支，建议使用更简单的命令:git cherry-pick
+@@ 如果只是复制某一两个提交到其他分支
+git cherry-pick  [short-commit-hash-code]
+当存在冲突的时候 也是需要来解决冲突的
+
+
 
 
 
