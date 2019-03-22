@@ -249,6 +249,16 @@ git cherry-pick  [short-commit-hash-code]
 当存在冲突的时候 也是需要来解决冲突的
 
 
+@@当执行 merge rebase cherry-pick  等操作的时候，出现冲突的时候，先将冲突解决 
+1#可以使用 git mergetool 自动比较工具进行文件合并
+也可以本地编辑相关的冲突文件后然后使用 git add . 将冲突文集添加 
+
+2#然后如果想要继续的执行相关的操作对应在命令上加上相关的属性
+对应命令中输入 --continue 属性来进行继续的操作
+对应命令中输入 --abort 属性来进行放弃这次操作
+
+
+
 
 
 
