@@ -107,6 +107,8 @@ git tag -a [tagname] -m "提交的注释"
 git push origin [tagname]
 #一次性推送很多标签
 git push origin --tags
+#强制推送本地分支覆盖远程分支（慎用）
+git push --force origin 
 #删除本地仓库的tag
 git tag -d [tagname]
 #删除远程仓库的tag
