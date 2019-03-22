@@ -187,6 +187,59 @@ git checkout --track [remote-name]/[branch-name] -b [local-branch-name]
 #删除远程分支
 git push [remote-name] --delete [branch-name]
 
+#基变相关的使用 (可以参考相关网页 https://www.jianshu.com/p/4a8f4af4e803)
+1# 可以将本地分支的几个commit提交合并为一个commit的提交。合并多个commit为一个完整commit。
+这里我们使用命令:
+git rebase -i [short-commit-hash-code]
+其中-i的意思是--interactive，即弹出交互式的界面让用户编辑完成合并操作
+然后会出现2次vi 界面
+第一次是进行 对多次提交对应的 保留 修改 删除 合并 等相关的操作
+
+#pick：保留该commit（缩写:p）
+
+#reword：保留该commit，但我需要修改该commit的注释（缩写:r）
+
+#edit：保留该commit, 但我要停下来修改该提交(不仅仅修改注释)（缩写:e）
+
+#squash：将该commit和前一个commit合并（缩写:s）
+
+#fixup：将该commit和前一个commit合并，但我不要保留该提交的注释信息（缩写:f）
+
+#exec：执行shell命令（缩写:x）
+
+#drop：我要丢弃该commit（缩写:d）
+
+
+
+第二次是对注释修改的相关操作界面。
+经过两次编辑然后保存退出之后。相关几次提交就会进行对应的合并操作。
+
+
+2#将某一段commit粘贴到另一个分支上
+我们将使用如下命令：
+1# 将选取指定一段commit区间，重播到指定的分支上
+git  rebase   [start-short-commit-hash-code]^   [end-short-commit-hash-code]   --onto [branch-name]
+
+2#此时可能会存在冲突，因为在上面使用 git rebase 和merge 相似可能会产生文件合并冲突。此时需要先解决冲突
+可以使用 git mergetool 来进行处理对应commit的合并 ，然后在执行 git rebase --continue 来进行下一个commit
+的rebase操作。直到指定的这段区间的提交都进行了rebase 之后
+
+3# 这时候当前的head是游离的状态，所以分支也是游离状态，所以需要先将分支切换到上面 onto 对应的分支上
+git  checkout [rebase-onto-branch-name]
+
+4# 使用reset 方法将head指向刚才rebase 生成的默认commit-hash-code 节点上即可完成
+git reset --hard  [commit-hash-code]
+
+5# 此时你使用 git log 查看分支会发现对应commit区间已经复制到了指定的分支上了
+
+
+
+
+
+
+
+
+
 
 
 
