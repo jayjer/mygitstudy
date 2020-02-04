@@ -1,0 +1,27 @@
+Git bash
+修改几次提交注释的方法、
+1. git rebase -i [ short-commit-hash-code] OR[HEAD~3] --选择对应的合并提交的方法 如：前面3次提交
+（1）：第一次是进行 对多次提交对应的 保留 修改 删除 合并 等相关的操作
+
+#pick：保留该commit（缩写:p）
+
+#reword：保留该commit，但我需要修改该commit的注释（缩写:r）
+
+#edit：保留该commit, 但我要停下来修改该提交(不仅仅修改注释)（缩写:e）
+
+#squash：将该commit和前一个commit合并（缩写:s）
+
+#fixup：将该commit和前一个commit合并，但我不要保留该提交的注释信息（缩写:f）
+
+#exec：执行shell命令（缩写:x）
+
+#drop：我要丢弃该commit（缩写:d）
+（2）：第二次是对注释修改的相关操作界面。
+经过两次编辑然后保存退出之后。相关几次提交就会进行对应的合并操作。
+
+注意：如果出现错误 或者想放弃这次操作 请使用 git rebase --abort 会放弃合并，回到rebase操作之前的状态，之前的提交的不会丢弃；
+4. git push --force origin develop -- 强制提交到对应远程分支
+
+
+
+
