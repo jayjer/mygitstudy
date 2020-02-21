@@ -1,0 +1,47 @@
+SpringMVC—JSR303—validate
+分类： SpringMVC
+定义：JSR-303 是JAVA EE 6 中的一项子规范，叫做Bean Validation,
+现在一共有两个规范:BeanValidation1.0(即JSR303)和BeanValidation1.1(即JSR349),主要用于对数据进行校验,
+确保输入进来的数据从语 义上来讲是正确的。
+特点：1.JSR 303 用于对Java Bean 中的字段的值进行验证,使得验证逻辑从业务代码中脱离出来。
+          2.是一个运行时的数据验证框架，在验证之后验证的错误信息会被马上返回。
+应用场景:一般用于表单提交页面(如用户名必填、只能由数字字母组成等等)
+
+使用：                                      
+-----------------------------------------------------------------------------------------------------------------
+1.@NotNull/@Null        
+  验证字段： 引用数据类型      
+  注解说明：注解元素必须是非空或空
+2.@Digits
+  验证字段：byte、short、int、long及各自的包装类型以及BigDecimal、BigInteger、String
+  注解说明：验证数字构成是否合法
+  属性说明：integer:指定整数部分数字位数，fraction:指定小数部分数字位数
+3.@Future/Past
+  验证字段：java.util.Date,java.util.Calendar
+  注解说明：验证是否在当前系统时间之后/之前
+4.@Max/@Min
+  验证字段：byte、short、int、long及对应的包装类型以及BigDecimal、BigInteger
+  注解说明：验证值是否小于等于最大指定整数值或大于等于最小指定整数值
+5.@Pattern
+  验证字段：String
+  注解说明：验证字符串是否匹配指定的正则表达式
+  属性说明：regexp:匹配的正则表达式，flags:指定Pattern.Flag的数值，表示正则表达式的选项
+6.@Size
+  验证字段：String、Collection、Map和数组
+  注解说明：验证元素大小是否在指定范围内
+  属性说明：max:最大长度，min:最小长度，message:提示信息,默认：{constraint.size}
+7.@DecimalMax/@DecimalMin
+  验证字段：byte、short、int、long及对应的包装类型以及BigDecimal、BigInteger、String
+  属性说明：验证值是否小于等于最大指定小数值或大于等于最小指定小数值
+8.@Valid
+  属性说明：验证值是否需要递归调用
+---------------------------------------------------------------------------------------------------
+Hibernate Validator 附加的 constraint
+9.@Email  被注释的元素必须是电子邮箱地址
+10.@Length          被注释的字符串的大小必须在指定的范围内
+11.@NotEmpty  被注释的字符串的必须非空
+12.@Range          被注释的元素必须在合适的范围内
+
+13@Digits     验证 Number 和 String 的构成是否合法  
+@Digits(integer=,fraction=) 验证字符串是否是符合指定格式的数字，interger指定整数精度，fraction指定小数精度。
+-------------------------------------------------------------
